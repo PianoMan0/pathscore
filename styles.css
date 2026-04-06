@@ -1,0 +1,307 @@
+/* ------------------------------
+   Base + Global
+------------------------------ */
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #222;
+  background: #f4f1ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: #f4f1ea;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ------------------------------
+   App Container
+------------------------------ */
+
+.app {
+  width: min(100%, 900px);
+  padding: 1.4rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+header h1 {
+  margin-bottom: 0.3rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+header p {
+  margin: 0.3rem auto;
+  max-width: 620px;
+  color: #555;
+}
+
+.tagline {
+  font-weight: 500;
+}
+
+/* ------------------------------
+   Panels (Stats, Controls, Music, Map, History)
+------------------------------ */
+
+.stats-panel,
+.controls,
+.music-info,
+.map-section,
+.history-panel {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* ------------------------------
+   Stats Panel
+------------------------------ */
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.stat-card {
+  padding: 0.8rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a4ed8;
+}
+
+/* ------------------------------
+   Controls
+------------------------------ */
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.9rem;
+  padding: 1rem;
+  margin-top: 1.4rem;
+}
+
+.btn {
+  min-height: 48px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: #eee;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #1f6feb;
+  color: #fff;
+}
+
+.btn-danger {
+  background: #d64545;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #f2f2f2;
+  border-color: #ccc;
+  color: #222;
+}
+
+/* ------------------------------
+   Music Info
+------------------------------ */
+
+.music-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1.4rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.info-label {
+  color: #666;
+}
+
+.info-value {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ------------------------------
+   Song Section
+------------------------------ */
+
+.song-section {
+  padding: 1rem;
+  margin-top: 1.4rem;
+}
+
+.song-section h2 {
+  margin-bottom: 0.65rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.song-copy {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ------------------------------
+   History Panel
+------------------------------ */
+
+.history-panel {
+  padding: 1rem;
+  margin-top: 1.4rem;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.history-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  font-size: 1.4rem;
+  color: #444;
+  background: none;
+  border: none;
+}
+
+.walks-list {
+  display: grid;
+  gap: 0.8rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.walk-item {
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+}
+
+.walk-item h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.walk-item p {
+  margin: 0.2rem 0;
+  color: #555;
+}
+
+.replay-btn {
+  margin-top: 0.6rem;
+  background: #0f766e;
+  color: white;
+  border-radius: 6px;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.footer-note {
+  margin-top: 0.2rem;
+}
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 720px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .app {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .stats-panel,
+  .controls,
+  .music-info {
+    grid-template-columns: 1fr;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #mapCanvas {
+    min-height: 240px;
+  }
+}

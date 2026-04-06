@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pathscore - Turn Your Walk Into Music</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="description" content="Transform your real-world movements into a unique musical composition. Track location, detect steps, and create melodies while you walk." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Pathscore</h1>
+      <p>Turn your walk into music</p>
+      <p class="tagline">Pathscore tracks your movement to create a custom song!</p>
+    </header>
+
+    <main>
+      <section class="stats-panel">
+        <div class="stat-card">
+          <div class="stat-label">GPS Status</div>
+          <div class="stat-value" id="gpsStatus" aria-live="polite">Ready</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Distance</div>
+          <div class="stat-value" id="distance">0m</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Accuracy</div>
+          <div class="stat-value" id="accuracy">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Steps</div>
+          <div class="stat-value" id="stepCount">0</div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="startBtn" class="btn btn-primary" aria-label="Start a new walk">
+          Start Walk
+        </button>
+        <button id="stopBtn" class="btn btn-danger" disabled aria-label="Stop the current walk">
+          Stop Walk
+        </button>
+        <button id="downloadBtn" class="btn btn-secondary" disabled aria-label="Download your song">
+          Download Song
+        </button>
+        <button id="historyBtn" class="btn btn-secondary" aria-label="View walk history">
+          History
+        </button>
+      </section>
+
+      <section class="music-info">
+        <div class="info-row">
+          <span class="info-label">Tempo:</span>
+          <span class="info-value" id="tempoDisplay">-- BPM</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Key:</span>
+          <span class="info-value" id="keyDisplay">--</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Last Note:</span>
+          <span class="info-value" id="noteDisplay">--</span>
+        </div>
+      </section>
+
+      <section id="historyPanel" class="history-panel" style="display: none;">
+        <div class="history-header">
+          <h3>Walk History</h3>
+          <button id="closeHistory" class="close-btn" aria-label="Close history panel">×</button>
+        </div>
+        <div id="walksList" class="walks-list"></div>
+        <button id="clearHistoryBtn" class="btn btn-secondary btn-small">Clear All Walks</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Pathscore</p>
+      <p class="footer-note">Enable location and audio permissions • Works best outdoors with clear sky</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

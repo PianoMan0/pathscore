@@ -70,7 +70,6 @@ const appState = {
 
 
 const NOTE_DISTANCE = 3;
-const SCALE = [60, 62, 64, 65, 67, 69, 71, 72];
 const NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const PAD_VOLUME = 0.15;
 const GPS_TIMEOUT = 15000; // 15 seconds
@@ -98,6 +97,13 @@ const PROGRESSIONS = {
     [0, 2, 5, 4]
   ],
   minor: [
+    [0, 5, 3, 7],
+    [0, 3, 4, 5],
+    [0, 6, 4, 7],
+    [0, 5, 2, 3]
+  ]
+};
+const MELODY_MOTION_MULTIPLIER = 2;
     [0, 5, 3, 7],
     [0, 3, 4, 5],
     [0, 6, 4, 7],
@@ -190,14 +196,6 @@ function getProgressionChord() {
 
 function advanceProgression() {
   appState.progressionStep = (appState.progressionStep + 1) % appState.chordProgression.length;
-}
-
-function createAmbientNote(offset) {
-  const chordDegree = getProgressionChord();
-  const chordNotes = getChordNotes(chordDegree);
-  const base = chordNotes[Math.abs(Math.round(offset)) % chordNotes.length];
-  const octaveShift = Math.random() > 0.6 ? 12 : 0;
-  return base + octaveShift;
 }
 
 function shouldPlayAmbientNote() {
@@ -814,6 +812,12 @@ function startWalk() {
   appState.recordedChunks = [];
   appState.recordingBlob = null;
 
+  if (appState.audioNodes.padOsc1 && appState.audioNodes.padOsc2 && appState.audioNodes.padGain) {
+    appState.audioNodes.padOsc1.frequency.value = midiToFreq(appState.root - 12);
+    appState.audioNodes.padOsc2.frequency.value = midiToFreq(appState.root - 5);
+    appState.audioNodes.padGain.gain.value = PAD_VOLUME;
+  }
+
   stepCountEl.textContent = "0";
   tempoDisplayEl.textContent = "-- BPM";
   noteDisplayEl.textContent = "--";
@@ -855,6 +859,9 @@ function stopWalk() {
 
   stopAmbientEngine();
   stopMotionEngine();
+  if (appState.audioNodes.padGain) {
+    appState.audioNodes.padGain.gain.value = 0;
+  }
   if (appState.mediaRecorder && appState.mediaRecorder.state === "recording") {
     appState.mediaRecorder.stop();
   }

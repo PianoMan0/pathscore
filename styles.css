@@ -1,7 +1,3 @@
-/* ------------------------------
-   Base + Global
------------------------------- */
-
 :root {
   font-family: Inter, system-ui, sans-serif;
   color: #222;
@@ -29,9 +25,6 @@ button {
   cursor: pointer;
 }
 
-/* ------------------------------
-   App Container
------------------------------- */
 
 .app {
   width: min(100%, 900px);
@@ -41,10 +34,6 @@ button {
   border: 1px solid #ddd;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
-
-/* ------------------------------
-   Header
------------------------------- */
 
 header {
   text-align: center;
@@ -69,10 +58,6 @@ header p {
   font-weight: 500;
 }
 
-/* ------------------------------
-   Panels (Stats, Controls, Music, Map, History)
------------------------------- */
-
 .stats-panel,
 .controls,
 .music-info,
@@ -83,10 +68,6 @@ header p {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
-
-/* ------------------------------
-   Stats Panel
------------------------------- */
 
 .stats-panel {
   display: grid;
@@ -111,9 +92,6 @@ header p {
   color: #1a4ed8;
 }
 
-/* ------------------------------
-   Controls
------------------------------- */
 
 .controls {
   display: grid;
@@ -152,10 +130,6 @@ header p {
   color: #222;
 }
 
-/* ------------------------------
-   Music Info
------------------------------- */
-
 .music-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -179,10 +153,6 @@ header p {
   color: #111;
 }
 
-/* ------------------------------
-   Song Section
------------------------------- */
-
 .song-section {
   padding: 1rem;
   margin-top: 1.4rem;
@@ -199,10 +169,6 @@ header p {
   color: #555;
   line-height: 1.6;
 }
-
-/* ------------------------------
-   History Panel
------------------------------- */
 
 .history-panel {
   padding: 1rem;
@@ -261,10 +227,6 @@ header p {
   border-radius: 6px;
 }
 
-/* ------------------------------
-   Footer
------------------------------- */
-
 footer {
   text-align: center;
   margin-top: 2rem;
@@ -275,10 +237,6 @@ footer {
 .footer-note {
   margin-top: 0.2rem;
 }
-
-/* ------------------------------
-   Mobile
------------------------------- */
 
 @media (max-width: 720px) {
   body {

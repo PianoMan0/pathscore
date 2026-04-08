@@ -68,7 +68,6 @@ const appState = {
   masterGain: null
 };
 
-
 const NOTE_DISTANCE = 3;
 const NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const PAD_VOLUME = 0.15;
@@ -83,11 +82,14 @@ const STEP_THRESHOLD = 10.8;
 const STEP_COOLDOWN = 5;
 const MAX_TEMPO_SPEED = 2.2;
 const LOW_SPEED_THRESHOLD = 0.12;
+
 const MODE_PATTERNS = {
   major: [0, 2, 4, 5, 7, 9, 11],
   minor: [0, 2, 3, 5, 7, 8, 10]
 };
+
 const KEY_ROOTS = [60, 62, 64, 65, 67, 69];
+
 const PROGRESSIONS = {
   major: [
     [0, 4, 5, 3],
@@ -103,13 +105,7 @@ const PROGRESSIONS = {
     [0, 5, 2, 3]
   ]
 };
-const MELODY_MOTION_MULTIPLIER = 2;
-    [0, 5, 3, 7],
-    [0, 3, 4, 5],
-    [0, 6, 4, 7],
-    [0, 5, 2, 3]
-  ]
-};
+
 const MELODY_MOTION_MULTIPLIER = 2;
 
 // Utility Functions
